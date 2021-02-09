@@ -1,0 +1,12 @@
+---
+kind: pipeline
+name: default
+
+steps:
+  - name: env
+    image: alpine
+    commands:
+      - env | sort
+      - echo "${DRONE_SOURCE_BRANCH} -- ${DRONE_BRANCH}"
+      - echo "${DRONE_SOURCE_BRANCH:-$DRONE_BRANCH}"
+      - echo "${DRONE_SOURCE_BRANCH//\//-}"
