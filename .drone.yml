@@ -9,4 +9,4 @@ steps:
       - env | sort
       - echo "${DRONE_SOURCE_BRANCH} -- ${DRONE_BRANCH}"
       - echo "${DRONE_SOURCE_BRANCH:-$DRONE_BRANCH}"
-      - echo "${DRONE_SOURCE_BRANCH//\//-}"
+      - echo "${DRONE_SOURCE_BRANCH//\//-} -- ${DRONE_TARGET_BRANCH//\//-}"
